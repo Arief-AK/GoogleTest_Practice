@@ -2,15 +2,9 @@
 #include <gtest/gtest.h>
 
 #include "include/MathFunctions.hpp"
+#include "include/Queue.hpp"
 using namespace CustomMath;
-
-// Demonstrate some basic assertions.
-TEST(HelloTest, BasicAssertions) {
-  // Expect two strings not to be equal.
-  EXPECT_STRNE("hello", "world");
-  // Expect equality.
-  EXPECT_EQ(7 * 6, 42);
-}
+using namespace CustomDataTypes;
 
 // Factorial - Zero Input
 TEST(MathFunctionsTest_Factorial, HandlesZeroInput)
@@ -33,6 +27,13 @@ TEST(MathFunctionsTest_Factorial, HandlesPositiveInput)
     EXPECT_EQ(Factorial_int(4), 24);
     EXPECT_EQ(Factorial_int(5), 120);
     EXPECT_EQ(Factorial_int(10), 3628800);
+}
+
+// Queue - Zero Input
+TEST(QueueTest, HandlesZeroInput)
+{
+    auto new_queue = Queue();
+    EXPECT_EQ(new_queue.size(), 0);
 }
 
 int main(int argc, char **argv){

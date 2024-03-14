@@ -21,7 +21,7 @@ enable_testing()
 
 add_subdirectory(include)
 add_executable(GoogleTestProject main.cpp include/MathFunctions.cpp)
-target_link_libraries(GoogleTestProject PUBLIC GTest::gtest_main MathLib)
+target_link_libraries(GoogleTestProject PUBLIC GTest::gtest_main MathLib DataStruct)
 # target_include_directories(GoogleTestProject PUBLIC
 #                           "${PROJECT_BINARY_DIR}"
 #                           "${PROJECT_SOURCE_DIR}/include"
