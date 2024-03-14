@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 
-namespace MathFunctions
+namespace CustomMath
 {
-    int Factorial(int number);
+    int Factorial_int(int number);
 }

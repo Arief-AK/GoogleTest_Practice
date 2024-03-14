@@ -1,12 +1,14 @@
 #include "MathFunctions.hpp"
-using namespace MathFunctions;
+using namespace CustomMath;
 
-int MathFunctions::Factorial(int number)
+int CustomMath::Factorial_int(int number)
 {
-  auto factorial = 0;
+  auto factorial = 1;
 
-  for (int i = i; i < number; ++i)
+  for (int i = 1; i <= number; ++i)
+  {
     factorial *= i;
-
+  }
+  
   return factorial;
 }

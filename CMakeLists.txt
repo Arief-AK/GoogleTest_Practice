@@ -5,6 +5,10 @@ project(GoogleTestProject VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+include(CPack)
+
 include(CTest)
 include(FetchContent)
 FetchContent_Declare(googletest
@@ -15,12 +19,13 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(GoogleTestProject main.cpp)
-target_link_libraries(GoogleTestProject GTest::gtest_main)
-
-set(CPACK_PROJECT_NAME ${PROJECT_NAME})
-set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
-include(CPack)
+add_subdirectory(include)
+add_executable(GoogleTestProject main.cpp include/MathFunctions.cpp)
+target_link_libraries(GoogleTestProject PUBLIC GTest::gtest_main MathLib)
+# target_include_directories(GoogleTestProject PUBLIC
+#                           "${PROJECT_BINARY_DIR}"
+#                           "${PROJECT_SOURCE_DIR}/include"
+#                           )
 
 include(GoogleTest)
 gtest_discover_tests(GoogleTestProject)
