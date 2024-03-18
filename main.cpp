@@ -89,8 +89,8 @@ TEST(QueueTest, FindValue)
 
     // WHEN: Startup
     // THEN: Attempts to find non-existing element in queue
-    EXPECT_ANY_THROW(new_queue.find_value(4));
-    // EXPECT_THROW(new_queue.find_value(4), std::runtime_error);
+    // EXPECT_ANY_THROW(new_queue.find_value(4));
+    EXPECT_THROW(new_queue.find_value(4), std::runtime_error* );
 }
 
 int main(int argc, char **argv){

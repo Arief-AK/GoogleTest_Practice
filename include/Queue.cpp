@@ -124,7 +124,7 @@ LinkedListNode *CustomDataTypes::Queue::find_value(int value)
     try
     {
         if(current_node == nullptr){
-            throw new std::runtime_error("Queue is empty");
+            throw std::runtime_error("Queue is empty");
         }
 
         // Sequentially check each node
