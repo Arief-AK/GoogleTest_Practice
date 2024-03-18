@@ -1,6 +1,4 @@
 #pragma once
-#ifndef QUEUE_H
-#define QUEUE_H
 
 #include <iostream>
 #include <stdexcept>
@@ -35,5 +33,3 @@ namespace CustomDataTypes
         LinkedListNode *tail;
     };
 }
-
-#endif
