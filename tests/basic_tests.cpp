@@ -1,5 +1,4 @@
 #include <iostream>
-#include <gtest/gtest.h>
 
 #include "../include/MathFunctions.hpp"
 #include "../include/Queue.hpp"
