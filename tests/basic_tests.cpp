@@ -89,6 +89,20 @@ TEST(QueueTest, FindValue)
 
     // WHEN: Startup
     // THEN: Attempts to find non-existing element in queue
-    // EXPECT_ANY_THROW(new_queue.find_value(4));
     EXPECT_THROW(new_queue.find_value(4), std::runtime_error* );
+}
+
+// Queue - Clear the queue
+TEST(QueueTest, ClearQueue)
+{
+    // GIVEN: Queue class is filled with 3 elements
+    auto new_queue = Queue();
+    new_queue.push_back(1);
+    new_queue.push_back(2);
+    new_queue.push_back(3);
+
+    // WHEN: Startup
+    // THEN: Attempts to clear the queue
+    new_queue.clear();
+    EXPECT_EQ(new_queue.size(), 0);
 }
