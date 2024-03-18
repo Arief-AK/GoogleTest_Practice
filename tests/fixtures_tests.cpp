@@ -37,25 +37,25 @@ TEST_F(QueueTestFixture, FindInvalidValue)
     
     // WHEN: Attempting to find non-existing value in the queue
     // THEN: Throws runtime_error exception
-    EXPECT_THROW(m_queue->find_value(10), std::runtime_error* );
+    EXPECT_THROW(m_queue->find_value(10), std::runtime_error );
 
     // WHEN: Attempting to find non-existing value in the queue
     // THEN: Throws runtime_error exception
-    EXPECT_THROW(m_queue->find_value(0), std::runtime_error* );
+    EXPECT_THROW(m_queue->find_value(0), std::runtime_error );
 
     // WHEN: Attempting to find non-existing value in the queue
     // THEN: Throws runtime_error exception
-    EXPECT_THROW(m_queue->find_value(10), std::runtime_error* );
+    EXPECT_THROW(m_queue->find_value(10), std::runtime_error );
 
     // WHEN: Attempting to find non-existing value in the queue
     // THEN: Throws runtime_error exception
-    EXPECT_THROW(m_queue->find_value(20), std::runtime_error* );
+    EXPECT_THROW(m_queue->find_value(20), std::runtime_error );
 
     // WHEN: Attempting to find non-existing value in the queue
     // THEN: Throws runtime_error exception
-    EXPECT_THROW(m_queue->find_value(-10), std::runtime_error* );
+    EXPECT_THROW(m_queue->find_value(-10), std::runtime_error );
 
     // WHEN: Attempting to find non-existing value in the queue
     // THEN: Throws runtime_error exception
-    EXPECT_THROW(m_queue->find_value(-20), std::runtime_error* );
+    EXPECT_THROW(m_queue->find_value(-20), std::runtime_error );
 }
