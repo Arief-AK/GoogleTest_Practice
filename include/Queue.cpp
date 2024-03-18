@@ -64,6 +64,24 @@ void CustomDataTypes::Queue::push_front(int value)
     count++;
 }
 
+void CustomDataTypes::Queue::clear()
+{
+    // Initialise empty flag
+    auto empty = false;
+
+    // If queue is not empty
+    while (!empty)
+    {
+        // Clear the queue
+        if(head != nullptr){
+            // Pop every element from the front
+            auto return_value = pop_front();
+        }else{
+            empty = true;
+        }
+    }
+}
+
 int CustomDataTypes::Queue::pop_back()
 {
     // Get the tail
@@ -144,8 +162,7 @@ LinkedListNode *CustomDataTypes::Queue::find_value(int value)
             }
         }
     }
-    catch(const std::runtime_error& e)
-    {
+    catch(const std::runtime_error& e){
         std::cerr << "\n ERROR: " <<  e.what() << "\n\n";
     }
     
