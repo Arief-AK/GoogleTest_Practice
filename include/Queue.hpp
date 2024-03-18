@@ -2,6 +2,9 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
+#include <iostream>
+#include <stdexcept>
+
 namespace CustomDataTypes
 {
     typedef struct LinkedListNode
@@ -23,6 +26,7 @@ namespace CustomDataTypes
         void push_front(int value);
         int pop_back();
         int pop_front();
+        LinkedListNode *find_value(int value);
         int size();
         
     private:
