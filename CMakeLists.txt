@@ -20,8 +20,9 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_subdirectory(include)
-add_executable(GoogleTestProject main.cpp include/MathFunctions.cpp tests/basic_tests.cpp)
-target_link_libraries(GoogleTestProject PUBLIC GTest::gtest_main MathLib DataStruct)
+add_subdirectory(tests)
+add_executable(GoogleTestProject main.cpp include/MathFunctions.cpp tests/basic_tests.cpp tests/fixtures_tests.cpp)
+target_link_libraries(GoogleTestProject PUBLIC GTest::gtest_main MathLib DataStruct QueueFixtures)
 
 include(GoogleTest)
 gtest_discover_tests(GoogleTestProject)
