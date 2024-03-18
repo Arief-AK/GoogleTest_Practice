@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <gtest/gtest.h>
 
 namespace CustomDataTypes
 {
