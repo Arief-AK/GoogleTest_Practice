@@ -33,9 +33,10 @@ TEST(MathFunctionsTest_Factorial, HandlesPositiveInput)
 TEST(QueueTest, HandlesZeroInput)
 {
     // GIVEN: Queue class is called
+    auto new_queue = Queue();
+
     // WHEN: Startup
     // THEN: Result is an empty queue
-    auto new_queue = Queue();
     EXPECT_EQ(new_queue.size(), 0);
 }
 
@@ -43,9 +44,10 @@ TEST(QueueTest, HandlesZeroInput)
 TEST(QueueTest, Appending)
 {
     // GIVEN: Queue class is called
+    auto new_queue = Queue();
+
     // WHEN: Startup
     // THEN: Appends values to the queue
-    auto new_queue = Queue();
     new_queue.push_back(10);
     new_queue.push_back(100);
     EXPECT_EQ(new_queue.size(), 2);
@@ -55,13 +57,16 @@ TEST(QueueTest, Appending)
 TEST(QueueTest, Removing)
 {
     // GIVEN: Queue class is called
-    // WHEN: Startup
-    // THEN: Appends and removes values of the queue
     auto new_queue = Queue();
+
+    // WHEN: Startup
+    // THEN: Appends values to the queue - size should be 2
     new_queue.push_back(1);
     new_queue.push_back(2);
     EXPECT_EQ(new_queue.size(), 2);
 
+    // WHEN: Startup
+    // THEN: Removes the values from the queue
     auto popped_value = new_queue.pop_back();
     EXPECT_EQ(popped_value, 2);
     popped_value = new_queue.pop_back();
@@ -85,6 +90,7 @@ TEST(QueueTest, FindValue)
     // WHEN: Startup
     // THEN: Attempts to find non-existing element in queue
     EXPECT_ANY_THROW(new_queue.find_value(4));
+    // EXPECT_THROW(new_queue.find_value(4), std::runtime_error);
 }
 
 int main(int argc, char **argv){
