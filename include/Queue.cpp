@@ -4,16 +4,9 @@ using namespace CustomDataTypes;
 
 CustomDataTypes::Queue::Queue()
 {
-    try
-    {
-        head = nullptr;
-        tail = nullptr;
-        count = 0;
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+    head = nullptr;
+    tail = nullptr;
+    count = 0;
 }
 
 CustomDataTypes::Queue::~Queue()
@@ -139,33 +132,27 @@ LinkedListNode *CustomDataTypes::Queue::find_value(int value)
     auto found = false;
     auto current_node = head;
 
-    try
-    {
-        if(current_node == nullptr){
-            throw std::runtime_error("Queue is empty");
-        }
+    if(current_node == nullptr){
+        throw std::runtime_error("Queue is empty");
+    }
 
-        // Sequentially check each node
-        while (!found){   
-            // Compare value
-            if(current_node->value == value){
-                found = true;
+    // Sequentially check each node
+    while (!found){   
+        // Compare value
+        if(current_node->value == value){
+            found = true;
+        }else{
+            if(current_node->next != nullptr)
+            {
+                // If not, then move on to the next node
+                auto next_node = current_node->next;
+                current_node = next_node;
             }else{
-                if(current_node->next != nullptr)
-                {
-                    // If not, then move on to the next node
-                    auto next_node = current_node->next;
-                    current_node = next_node;
-                }else{
-                    throw new std::runtime_error("Value does not exist in Queue");
-                }
+                throw std::runtime_error("Value does not exist in Queue");
             }
         }
     }
-    catch(const std::runtime_error& e){
-        std::cerr << "\n ERROR: " <<  e.what() << "\n\n";
-    }
-    
+
     // If correct, then return address of the node
     return current_node;
 }
